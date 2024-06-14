@@ -4,7 +4,6 @@ Utility methods for n-gram computations
 from collections import Counter
 from typing import Union, Any, Callable, List
 
-import re
 import nltk
 from transformers import AutoTokenizer
 
