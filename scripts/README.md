@@ -112,14 +112,14 @@ python main_evaluate.py --model_name 'openAI_modeation' --data_location 'sub_sam
 python main_evaluate.py --model_name 'openAI_modeation' --data_location 'ood_filtered_data.json' --config_location 'configs/neurips_config.json' --token <YOUR_OPENAI_TOKEN>
 ```
 
-- ### PLP_Threshold
+- ### PPL_Threshold
 
 ```
-python main_evaluate.py --model_name 'plp_threshold' --data_location 'sub_sample_filtered_data.json' --config_location 'configs/neurips_config.json' --token <YOUR_OPENAI_TOKEN>
+python main_evaluate.py --model_name 'ppl_threshold' --data_location 'sub_sample_filtered_data.json' --config_location 'configs/neurips_config.json'
 ```
 
 ```
-python main_evaluate.py --model_name 'plp_threshold' --data_location 'ood_filtered_data.json' --config_location 'configs/neurips_config.json' --token <YOUR_OPENAI_TOKEN>
+python main_evaluate.py --model_name 'ppl_threshold' --data_location 'ood_filtered_data.json' --config_location 'configs/neurips_config.json'
 ```
 
 - ### Bert Roberta GPT2
