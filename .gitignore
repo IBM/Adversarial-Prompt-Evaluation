@@ -132,3 +132,4 @@ dmypy.json
 env/
 datasets/
 .DS_Store
+!datasets/README.md
