@@ -15,7 +15,10 @@ install_requires = [
     "textattack",
     "jupyter",
     "chromadb",
-    "fschat[model_worker,webui]"
+    "fschat[model_worker,webui]",
+    "llm-guard",
+    "openai",
+    "langkit"
 ]
 
 dev_requires = [
