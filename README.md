@@ -94,4 +94,4 @@ The `scripts/` directory include a dedicated README for model reproducibility or
 
 The `dataset/` directory include a dedicated README and python files for reproducing `tap` and `gcg` attacks.
  
-## Licence
+## License
