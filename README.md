@@ -4,7 +4,7 @@
 
 This repo contain the source code of "Adversarial Prompt Evaluation: Systematic
 Benchmarking of Guardrails Against Prompt Input
-Attacks on LLMs" paper for NeurIPS Datasets and Benchmark track. 
+Attacks on LLMs" paper for NeurIPS Datasets and Benchmark 2024 track. 
 
 ## Abstract
 
@@ -90,8 +90,21 @@ This project is structured as follows:
 
 ```
 
-The `scripts/` directory include a dedicated README for model reproducibility or `run_train.sh` and `run_evaluate.sh` for full reproduction of the work.
+## Reproduce Experiments
 
-The `dataset/` directory include a dedicated README and python files for reproducing `tap` and `gcg` attacks.
+All the necessary file to reproduce the benchmark are available in the `.scipts/` folder.
+
+The `scripts/` directory include a dedicated README for model specific reproducibility or `run_train.sh` and `run_evaluate.sh` for full reproduction of the work.
+
+```
+cd scripts
+
+bash run_train.sh
+
+bash run_evaluate.sh
+```
+
+
+The `dataset/` directory include a dedicated README and python files for reproducing `tap` and `gcg` attacks which are not publicly available. All others dataset information and links can be found inside the README.
  
 ## License

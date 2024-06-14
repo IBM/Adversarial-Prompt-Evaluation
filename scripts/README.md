@@ -6,30 +6,32 @@ Attacks on LLMs" paper for NeurIPS Datasets and Benchmark track.
 ## Training
 Following the instruction to reproduce the traing of: 
 
-- ###simple uni-gram
+- ### simple uni-gram
 ```
 python3 main_n_gram_classifier_train.py
 ```
 
-- ###Bert:
+- ### Bert:
 ```
 python main_classification_fine_tuning.py  --model_name bert --model_name_or_path bert
 ```
 
-- ###Deberta:
+- ### Deberta:
 ```
 python main_classification_fine_tuning.py  --model_name deberta --model_name_or_path deberta
 ```
 
-- ###GPT2:
+- ### GPT2:
 ```
 python main_classification_fine_tuning.py  --model_name gpt2 --model_name_or_path gpt2
 ```
 
+N.B.: The Transformer-based classifier training generate a finetuned version of the specific model used at `scripts/results/{model_name}/run_{0 or the number of execution}/best_ES_model/`. This path should be used for the evaluation replacing `{model_specific_train_path}`.
+
 ## Evaluation
 Following, the command to reproduce the evaluation script for each model:
 
-- ###ProtectAI v1 - v2
+- ### ProtectAI v1 - v2
 
 ```
 python main_evaluate.py --model_name 'protectAI_v1' --data_location 'sub_sample_filtered_data.json' --config_location 'configs/neurips_config.json'
@@ -47,7 +49,7 @@ python main_evaluate.py --model_name 'protectAI_v2' --data_location 'sub_sample_
 python main_evaluate.py --model_name 'protectAI_v2' --data_location 'ood_filtered_data.json' --config_location 'configs/neurips_config.json'
 ```
 
-- ###LlamaGuard and LlamaGuard2
+- ### LlamaGuard and LlamaGuard2
 
 ```
 python main_evaluate.py --model_name 'lamaguard' --data_location 'sub_sample_filtered_data.json' --config_location 'configs/neurips_config.json' --token <YOUR_HF_TOKEN>
