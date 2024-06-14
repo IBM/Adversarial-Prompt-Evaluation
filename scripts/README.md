@@ -135,9 +135,9 @@ python main_evaluate.py --model_name {bert/roberta/gpt2} --model_load_path {mode
 - ### Azure AI Content Safety
 
 ```
-python main_evaluate.py --model_name 'AzureAPI' --data_location 'sub_sample_filtered_data.json' --config_location 'configs/neurips_config.json' --token <YOUR_AZURE_TOKEN>
+python main_evaluate.py --model_name 'AzureAPI' --data_location 'sub_sample_filtered_data.json' --config_location 'configs/neurips_config.json' --token <YOUR_AZURE_TOKEN> --endpoint <YOUR_AZURE_CONTENT_SAFETY_RESOURCE_ENDPOINT>
 ```
 
 ```
-python main_evaluate.py --model_name 'AzureAPI' --data_location 'ood_filtered_data.json' --config_location 'configs/neurips_config.json' --token <YOUR_AZURE_TOKEN>
+python main_evaluate.py --model_name 'AzureAPI' --data_location 'ood_filtered_data.json' --config_location 'configs/neurips_config.json' --token <YOUR_AZURE_TOKEN> --endpoint <YOUR_AZURE_CONTENT_SAFETY_RESOURCE_ENDPOINT>
 ```
