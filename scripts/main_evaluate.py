@@ -228,7 +228,7 @@ def metric_evaluate(results: dict, model_name: str, data_name, **kwargs):
         json.dump(eval_results, results_file, sort_keys=True, indent=4)
 
 def get_model(
-    model_name: str, path: str = None, token: str = None,  **kwargs
+    model_name: str, path: str = None, token: str = None, endpoint: str = None,  **kwargs
 ):
     """
     Helper function to load the model.
@@ -240,7 +240,7 @@ def get_model(
     :return: loaded model
     """
     if model_name == "AzureAPI":
-        return AzureAPI(endpoint="", subscription_key=token)
+        return AzureAPI(endpoint=endpoint, subscription_key=token)
     if model_name == "lamaguard":
         login(token=token)
         return LlamaGuard(max_new_tokens=2)
@@ -316,6 +316,7 @@ def evaluate_model(args: argparse.Namespace):
     model_name = args.model_name
     path = args.model_load_path
     token = args.token
+    endpoint = args.endpoint
 
     if args.data_location:
         with open(args.data_location, encoding="utf-8") as f:
@@ -338,7 +339,7 @@ def evaluate_model(args: argparse.Namespace):
 
         x_test, y_test, source_test = data_dict["x_test"], data_dict["y_test"], data_dict["source_test"]
 
-    model = get_model(model_name, path, token)
+    model = get_model(model_name, path, token, endpoint)
     results = handle_prediction(data_name, model_name, model, x_test, y_test, source_test, threshold=args.threshold)
     metric_evaluate(results, model_name, data_name=data_name)
 
@@ -348,6 +349,7 @@ if __name__ == "__main__":
     parser.add_argument("--model_name", type=str, default=None, choices=SUPPORTED_MODEL)
     parser.add_argument("--model_load_path", type=str, default=None)
     parser.add_argument("--token", type=str, default=None)
+    parser.add_argument("--endpoint", type=str, default=None)
     parser.add_argument("--threshold", type=float, default=None)
     parser.add_argument(
         "--data_location",
