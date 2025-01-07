@@ -2,9 +2,9 @@
 
 ## Overview
 
-This repo contain the source code of "Adversarial Prompt Evaluation: Systematic
+This repo contain the source code of ["Adversarial Prompt Evaluation: Systematic
 Benchmarking of Guardrails Against Prompt Input
-Attacks on LLMs" paper for NeurIPS Datasets and Benchmark 2024 track. 
+Attacks on LLMs"](https://openreview.net/pdf?id=a44MiSFw6G) paper accepted at the NeurIPS 2024 Workshop SafeGenAI (oral presentation). 
 
 ## Abstract
 
@@ -106,5 +106,20 @@ bash run_evaluate.sh
 
 
 The `dataset/` directory include a dedicated README and python files for reproducing `tap` and `gcg` attacks which are not publicly available. All others dataset information and links can be found inside the README.
- 
+
 ## License
+
+
+## Cite our work
+
+```
+@inproceedings{
+zizzo2024adversarial,
+title={Adversarial Prompt Evaluation: Systematic Benchmarking of Guardrails Against Prompt Input Attacks on {LLM}s},
+author={Giulio Zizzo and Giandomenico Cornacchia and Kieran Fraser and Muhammad Zaid Hameed and Ambrish Rawat and Beat Buesser and Mark Purcell and Pin-Yu Chen and Prasanna Sattigeri and Kush R. Varshney},
+booktitle={Neurips Safe Generative AI Workshop 2024},
+year={2024},
+url={https://openreview.net/forum?id=a44MiSFw6G}
+}
+```
+
